@@ -1,0 +1,64 @@
+header{
+  background:orange;
+  padding:5px;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.instructions{
+  background:lightblue;
+  width:400px;
+  padding: 2px 2px 30px 2px;
+  margin-bottom:10px;
+}
+
+.greentext{
+  color:purple;
+  font-weight:bold;
+
+}
+#randomnumber{
+  background:peachpuff;
+  color:orangered;
+  float: left;
+  font-size:75px;
+  width: 100px;
+  margin-right:10px;
+  text-align:center;
+}
+.winslosses{
+  background:lightgreen;
+  padding:4px;
+  width: 100px;
+  height:80px;
+  margin-bottom:10px;
+  float:left;
+}
+.images{
+  position:relative;
+  top:0px;
+  clear:both;
+  
+}
+.crystal{
+  margin-bottom:15px;
+}
+#scoreis{
+  padding:5px;
+  background:darkgreen;
+  color:white;
+  margin-bottom:5px;
+  width:200px;
+  position:relative;
+
+}
+
+#totalscore{
+  padding:5px;
+  background:darkgreen;
+  color:white;
+  font-size:50px;
+  width: 200px;
+  position:relative;
+}
+

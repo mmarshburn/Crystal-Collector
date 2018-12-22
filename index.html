@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		body {
+			background-image: url(images/dark-paths.png)
+		}
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="javascript/script.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<h1>Crystal Collector</h1>
+	</header>
+
+	<div class=instructions>
+		<p class=greentext>You will be given a random number at the start of the game</p>
+		<p class=greentext>There are four crystals below. By clicking on a cystal you will add a specific amount of points to
+			your total score.</p>
+		<p class=greentext>You win the game by matching your total score to a random number, you lose the game if your score
+			goes above that random number.</p>
+		<p class=greentext>The value of each crystal is hidden from you until you click on it.</p>
+		<p class=greentext>Each time when the game starts, the game changes the values of each crystal.</p>
+	</div>
+
+	<div id=randomnumber>0</div>
+
+	<div class=winslosses>
+		<p id=wins>Wins: 0</p>
+		<p id=losses>Losses: 0</p>
+	</div>
+
+	<br>
+	<br>
+	<div class=images>
+		<img id=redbutton src="images/red.png" width="60px" height="60px">
+		<img id=bluebutton src="images/blue.png" width="60px" height="60px">
+		<img id=yellowbutton src="images/yellow.png" width="60px" height="60px">
+		<img id=greenbutton src="images/green.png" width="60px" height="60px">
+	</div>
+
+	<div id=scoreis>Your total score is:</div>
+	<br>
+	<div id=totalscore>0</div>
+
+</body>
+
+</html>
