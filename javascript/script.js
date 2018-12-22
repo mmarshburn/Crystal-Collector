@@ -1,7 +1,7 @@
 $(document).ready(function(){
   console.log("here we go")
 
-let randomNumber
+let randomNumber;
 let wins = 0;
 let losses = 0; 
 let totalScore = 0; 
@@ -10,9 +10,6 @@ var randomCrystalValueRed;
 var randomCrystalValueBlue;
 var randomCrystalValueYellow;
 var randomCrystalValueGreen;
-let blueCrystal;
-let yellowCrystal;
-let greenCrystal;
 let setRandomNumber
 
 // Generate Random Number to match
@@ -24,99 +21,93 @@ setRandomNumber = function(){
 
 setRandomNumber();
 
-// Generate Random Crystal Value
-setRandomCrystalValue1 = function(){
-  randomCrystalValueRed = Math.floor((Math.random()*12)+1)
+setRandomCrystalValueRed = function(){
+  randomCrystalValueRed = Math.floor((Math.random()*12));
   console.log(randomCrystalValueRed);
-  
-}
-setRandomCrystalValue1();
+  $("redbutton").attr(randomCrystalValueRed);
 
-// Generate Random Crystal Value
-setRandomCrystalValue2 = function(){
-  randomCrystalValueBlue = Math.floor((Math.random()*12)+1)
+}
+setRandomCrystalValueRed();
+
+setRandomCrystalValueBlue = function(){
+  randomCrystalValueBlue = Math.floor((Math.random()*12));
   console.log(randomCrystalValueBlue);
-}
-setRandomCrystalValue2();
+  $("bluebutton").attr(randomCrystalValueBlue);
 
-// Generate Random Crystal Value
-setRandomCrystalValue3 = function(){
-  randomCrystalValueYellow = Math.floor((Math.random()*12)+1)
+}
+setRandomCrystalValueBlue();
+
+setRandomCrystalValueYellow = function(){
+  randomCrystalValueYellow = Math.floor((Math.random()*12));
   console.log(randomCrystalValueYellow);
-}
-setRandomCrystalValue3();
+  $("yellowbutton").attr(randomCrystalValueYellow);
 
-// Generate Random Crystal Value 
-setRandomCrystalValue4 = function(){
-  randomCrystalValueGreen = Math.floor((Math.random()*12)+1)
+}
+setRandomCrystalValueYellow();
+
+setRandomCrystalValueGreen = function(){
+  randomCrystalValueGreen = Math.floor((Math.random()*12));
   console.log(randomCrystalValueGreen);
-}
-setRandomCrystalValue4();
+  $("greenbutton").attr(randomCrystalValueGreen);
 
-
-$("#redbutton").click (function(){
-  
-  totalScore += randomCrystalValueRed;
-  console.log("Score is: " + totalScore);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function startGame() {
-  redCrystal = randomCrystalValue1();
-  blueCrystal = randomCrystalValue2();
-  yellowCrystal = randomCrystalValue3();
-  greenCrystal = randomCrystalValue4();
-  $("#randomNumber").text(randomNumber);
-  $("#totalScore").text(totalScore);
-};
-
-startGame();
-
-function resetGame() {
-  totalscore = 0;
-  startGame()
 }
 
+setRandomCrystalValueGreen();
+
+// Reset Game
+
+resetGame = function(){
+  setRandomCrystalValueBlue();
+  setRandomCrystalValueGreen();
+  setRandomCrystalValueRed();
+  setRandomCrystalValueYellow();
+  setRandomNumber();
+  totalScore = 0;
+}
+
+// Compare Scores
 
 function compareToRandom(){
-  if (totalScore === randomNumber){
-    wins++;
-    $("#wins").text(wins);
+  if (totalScore == randomNumber){
+    wins = wins++;
+    $("#wins").text("Wins: " , wins);
+    alert("You win!")
     resetGame()
   }
 
   else if (totalScore > randomNumber){
-    losses++;
-    $("#losses").text(losses);
+   losses = losses++;
+    $("#losses").text("Losses: " , losses);
+    alert("You lose!")
     resetGame();
     }
   };
-
   compareToRandom();
 
-  $("#redbutton").click(function(){
-    totalScore = redCrystal + totalScore;
-    console.log(totalScore);
-  })
+// Assign Values and add scores
 
+$("#redbutton").on('click', function(){
+  totalScore = totalScore + randomCrystalValueRed;
+  $('#totalscore').text(totalScore)
+  compareToRandom();
+});
+
+$("#bluebutton").on('click', function(){
+  totalScore = totalScore + randomCrystalValueBlue;
+  $('#totalscore').text(totalScore)
+  compareToRandom();
+});
+
+$("#yellowbutton").on('click', function(){
+  totalScore = totalScore + randomCrystalValueYellow;
+  $('#totalscore').text(totalScore)
+  compareToRandom();
+});
+
+$("#greenbutton").on('click', function(){
+  totalScore = totalScore + randomCrystalValueGreen;
+  $('#totalscore').text(totalScore)
+  compareToRandom();
+});
 
 });
